@@ -9,6 +9,7 @@
 #include <utility>
 #include <GnomeSort_Zykov.h>
 #include "CombSort_Sannikov.h"
+#include <Heap_sort.h>
 using namespace std;
 
 int main()
@@ -107,7 +108,7 @@ int main()
                 arr = (std::move(arr));
                 break;
             case 5:
-                (arr.data(), n);
+                arr = heap_sort(arr.data(), n);
                 break;
             case 6:
                 (arr.begin(), arr.end());
