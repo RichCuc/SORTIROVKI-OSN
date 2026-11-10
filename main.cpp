@@ -7,9 +7,11 @@
 #include <iomanip>
 #include <cmath>
 #include <utility>
-#include <GnomeSort_Zykov.h>
+#include "GnomeSort_Zykov.h"
 #include "CombSort_Sannikov.h"
-#include <Heap_sort.h>
+#include "Heap_sort.h"
+#include "Radix.h"
+
 using namespace std;
 
 int main()
@@ -102,13 +104,13 @@ int main()
                 arr = gnomeSort(std::move(arr));
                 break;
             case 3:
-                arr = (std::move(arr));
+                arr = radixSort(std::move(arr));
                 break;
             case 4:
                 arr = (std::move(arr));
                 break;
             case 5:
-                arr = heap_sort(arr.data(), n);
+                heap_sort(arr.data(), n);
                 break;
             case 6:
                 (arr.begin(), arr.end());
