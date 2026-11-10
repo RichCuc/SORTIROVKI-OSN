@@ -8,7 +8,7 @@
 #include <cmath>
 #include <utility>
 #include <GnomeSort_Zykov.h>
-
+#include "CombSort_Sannikov.h"
 using namespace std;
 
 int main()
@@ -32,11 +32,11 @@ int main()
     if (files.size() != 18)
     {
         cout << "В files.txt должно быть 18 имён файлов. Сейчас: "
-             << files.size() << "\n";
+            << files.size() << "\n";
         return 1;
     }
 
-    string names[] = {"Comb", "Gnome", "Radix", "Shaker", "Heap", "std::sort"};
+    string names[] = { "Comb", "Gnome", "Radix", "Shaker", "Heap", "std::sort" };
     const int timeWidth = 13;
     int tableWidth = fileWidth + 9 + 6 * timeWidth;
     int loaded = 0;
@@ -45,7 +45,7 @@ int main()
     cout << "Автоматический запуск: 18 файлов, 6 сортировок, всего 108 запусков.\n";
     cout << "Время в миллисекундах, один запуск на каждую пару файл/сортировка.\n";
     cout << "Comb: расчёской, Gnome: гномья, Radix: поразрядная,\n"
-         << "Shaker: шейкерная, Heap: пирамидальная.\n\n";
+        << "Shaker: шейкерная, Heap: пирамидальная.\n\n";
     cout << left << setw(fileWidth) << "File" << right << setw(9) << "Count";
     for (const string& name : names)
         cout << setw(timeWidth) << name;
@@ -95,7 +95,7 @@ int main()
             switch (number)
             {
             case 1:
-                arr = (std::move(arr));
+                arr = CombSort(std::move(arr));
                 break;
             case 2:
                 arr = gnomeSort(std::move(arr));
