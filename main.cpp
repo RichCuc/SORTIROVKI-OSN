@@ -7,7 +7,7 @@
 #include <iomanip>
 #include <cmath>
 #include <utility>
-
+#include <GnomeSort_Zykov.h>
 
 using namespace std;
 
@@ -98,7 +98,7 @@ int main()
                 arr = (std::move(arr));
                 break;
             case 2:
-                arr = (std::move(arr));
+                arr = gnomeSort(std::move(arr));
                 break;
             case 3:
                 arr = (std::move(arr));
